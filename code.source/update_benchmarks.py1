@@ -1,0 +1,119 @@
+# Collective Mind
+#
+# See cM LICENSE.txt for licensing details.
+# See cM Copyright.txt for copyright details.
+#
+# Developer(s): Grigori Fursin, started on 2011.09
+
+# Misc scripts
+
+import json
+import os
+import shutil
+
+px1='.cm'
+px2='data.json'
+px3='a'
+
+# Load array update
+try:
+   f=file('update_benchmarks.json')
+   au=json.loads(f.read())
+   f.close()
+except Exception as e:
+   print 'Can\'t load json for update'
+   exit(1)
+
+
+dirList=os.listdir('.')
+for fn in dirList:
+    # Check if startswith
+    if fn.startswith(px3):
+
+       os.system('del '+fn+'\*.tmp')
+
+       # Get codelet file and wrapper
+       cc=''
+       cw=''
+       cn=''
+       if os.path.isdir(fn):
+          for k in os.listdir(fn):
+              if k.find('.wrapper.')>0: cw=k
+              elif k.find('.codelet_')>0: 
+                cc=k
+                i1=k.find('.')
+                i2=k.find('.',i1+1)
+                cn='astex_'+k[i1+1:i2]
+
+          if cc!='' and cw!='':
+             # Processing wrapper
+             cw1=cw+'.tmp'
+             f=open(os.path.join(fn,cw),'rt')
+             f1=open(os.path.join(fn,cw1),'wt')
+
+             l='x'
+             n=0
+             found_kernel=False
+             while (l != "" ):
+                l = f.readline()
+                l1=l.strip()
+
+                if n==1 and l1.startswith('#'):
+                   l='/* \n Codelet from MILEPOST project: http://cTuning.org/project-milepost\n Updated by Grigori Fursin to work with Collective Mind Framework\n\n'+l[1:]+'*/\n\n'
+                elif l.startswith('  if (argc <'):
+                   l='\n#ifdef OPENME\n  openme_init("");\n  openme_callback("PROGRAM_START", NULL);\n#endif\n\n'+l
+                elif l.startswith('  while (_astex_wrap_loop > 0)'):
+                   l='\n#ifdef OPENME\n  openme_callback("KERNEL_START", NULL);\n#endif\n\n'+l
+                   found_kernel=True
+                elif found_kernel and l.startswith('  }'):
+                   l=l+'\n#ifdef OPENME\n  openme_callback("KERNEL_END", NULL);\n#endif\n\n'
+                elif found_kernel and l.startswith('  return 0;'):
+                   l='\n#ifdef OPENME\n  openme_callback("PROGRAM_END", NULL);\n#endif\n\n'+l
+
+                if n!=0 or (n==0 and l1!=''):
+                   f1.write(l)
+
+                n+=1
+
+             f1.close()
+             f.close()
+
+             shutil.copyfile(os.path.join(fn,cw1),os.path.join(fn,cw))
+             os.remove(os.path.join(fn,cw1))
+
+       # Load config
+       p1=os.path.join(fn,px1,px2)
+
+       success=True
+
+       try:
+          f=file(p1)
+       except Exception as e:
+          success=False
+
+       if success:
+          try:
+             array=json.loads(f.read())
+          except Exception as e:
+             print 'Error: ', e
+             success=False
+
+          if success:
+             f.close()
+
+             print 'Processing '+fn+' ...'
+
+             if cn!='':
+                array['run_cmds']['default']['hot_functions']=[{'name':cn, 'percent':'99'}]
+
+             # Writing updated array
+             success=True
+             try:
+                f=file(p1,'w')
+                f.write(json.dumps(array, indent=2, sort_keys=True)+'\n')
+                f.close()
+             except Exception as e:
+                success=False
+
+             if not success:
+                print 'Failed!'

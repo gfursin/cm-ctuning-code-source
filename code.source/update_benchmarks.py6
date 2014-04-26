@@ -1,0 +1,74 @@
+# Collective Mind
+#
+# See cM LICENSE.txt for licensing details.
+# See cM Copyright.txt for copyright details.
+#
+# Developer(s): Grigori Fursin, started on 2011.09
+
+# Misc scripts
+
+import json
+import os
+import shutil
+
+px1='.cm'
+px2='data.json'
+px3='benchmark-cbench'
+
+dirList=os.listdir('.')
+for fn in dirList:
+    # Check if startswith
+    if fn.startswith(px3):
+       # Load config
+       p1=os.path.join(fn,px1,px2)
+
+       success=True
+
+       print 'Loading '+fn+' ...'
+
+       try:
+          f=file(p1)
+       except Exception as e:
+          success=False
+
+       if success:
+          try:
+             array=json.loads(f.read())
+          except Exception as e:
+             print 'Error: ', e
+             success=False
+
+          if success:
+             f.close()
+
+             x=array.get('run_cmds',{})
+             for y in x:
+                 z0=x[y].get('run_time',{})
+
+                 z=z0.get('run_output_files',[])
+                 z2=z0.get('run_cmd_out2')
+
+                 if 'run_correctness_output_files' not in z0:
+
+                    zc=[]
+                    for q in z:
+                        zc.append(q)
+                    zc.append(z2)
+
+                    z0['run_correctness_output_files']=zc
+
+                 if z2 in z:
+                    index=z.index(z2)
+                    del(z[index])
+
+             # Writing updated array
+             success=True
+             try:
+                f=file(p1,'w')
+                f.write(json.dumps(array, indent=2, sort_keys=True)+'\n')
+                f.close()
+             except Exception as e:
+                success=False
+
+             if not success:
+                print 'Failed!'
