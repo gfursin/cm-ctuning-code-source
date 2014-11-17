@@ -1,0 +1,11 @@
+{
+  "data_uid": "38f4c225ca77ce3b", 
+  "data_name": "cTuning benchmarks", 
+  "dict": {
+    "url": "https://github.com/gfursin/cm-ctuning-code-source.git", 
+    "shared": "git", 
+    "sync": "yes"
+  }, 
+  "data_alias": "ctuning-benchmarks", 
+  "data_uoa": "ctuning-benchmarks"
+}
