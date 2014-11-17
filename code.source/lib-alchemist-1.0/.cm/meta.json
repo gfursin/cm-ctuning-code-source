@@ -1,0 +1,66 @@
+{
+  "add_target_extension": {
+    "static": "dll", 
+    "dynamic": "dll"
+  }, 
+  "cm_dependencies": {
+    "target_processor": [], 
+    "classes": [
+      "72f81bd39f84ed89", 
+      "974b24d4ca79bf6e", 
+      "741ddb394cd917fb"
+    ], 
+    "host_os": [
+      "5c84a209d714c0d9", 
+      "4f9ab17ad8416295"
+    ], 
+    "target_os": [
+      "5c84a209d714c0d9", 
+      "7a3490daa7063380"
+    ]
+  }, 
+  "build_scripts_uoa": [
+    "9738ca3d2555f6eb"
+  ], 
+  "main_language": "c", 
+  "clean_scripts_names": {
+    "clean": "Universal cleaning"
+  }, 
+  "cm_classes_uoa": [
+    "914178a17c102fb5", 
+    "7834e958464669af", 
+    "123b266f13143a33", 
+    "55b42a7918b8e2ab"
+  ], 
+  "cm_access_control": {
+    "read_groups": "all", 
+    "comments_groups": "admin", 
+    "write_groups": "owner"
+  }, 
+  "cm_description": "", 
+  "cm_display_as_alias": "Alchemist 1.0 beta", 
+  "powered_by": {
+    "version": "1.0.1977.beta", 
+    "name": "Collective Mind Engine"
+  }, 
+  "cm_updated": [
+    {
+      "cm_iso_datetime": "2012-06-15T17:19:56.153000", 
+      "cm_note": "", 
+      "cm_module_uid": "0247b19de472d7d0", 
+      "cm_user_uoa": "74c2480dcec9e85d"
+    }
+  ], 
+  "source_files": [
+    "alchemist.c"
+  ], 
+  "target_file": "libcm-4d2386345d7444ca", 
+  "build_scripts_names": {
+    "static": {
+      "build_gcc_plugin_c": "Dynamic plugin"
+    }, 
+    "dynamic": {
+      "build_gcc_plugin_c": "Dynamic plugin"
+    }
+  }
+}

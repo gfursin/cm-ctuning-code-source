@@ -1,0 +1,13 @@
+{
+  "control": {
+    "engine": "CK", 
+    "version": [
+      "0", 
+      "1", 
+      "140810", 
+      "beta"
+    ], 
+    "iso_datetime": "2014-11-17T17:30:03.459000"
+  }, 
+  "data_name": "benchmark-polybench-cpu-trisolv"
+}

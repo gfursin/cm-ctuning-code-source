@@ -1,0 +1,58 @@
+{
+  "add_target_extension": {
+    "static": "lib", 
+    "dynamic": "dll"
+  }, 
+  "cm_dependencies": {
+    "target_processor": [], 
+    "classes": [
+      "72f81bd39f84ed89"
+    ], 
+    "host_os": [], 
+    "target_os": []
+  }, 
+  "build_scripts_uoa": [
+    "9738ca3d2555f6eb"
+  ], 
+  "main_language": "c", 
+  "clean_scripts_names": {
+    "clean": "Universal cleaning"
+  }, 
+  "cm_classes_uoa": [
+    "914178a17c102fb5", 
+    "974b24d4ca79bf6e", 
+    "452f00fd41a49f2f"
+  ], 
+  "cm_access_control": {
+    "read_groups": "all", 
+    "comments_groups": "admin", 
+    "write_groups": "owner"
+  }, 
+  "cm_description": "", 
+  "cm_display_as_alias": "JSON library for C with update for cM", 
+  "powered_by": {
+    "version": "1.0.1977.beta", 
+    "name": "Collective Mind Engine"
+  }, 
+  "cm_updated": [
+    {
+      "cm_iso_datetime": "2012-06-19T13:42:52.586000", 
+      "cm_note": "", 
+      "cm_module_uid": "0247b19de472d7d0", 
+      "cm_user_uoa": "74c2480dcec9e85d"
+    }
+  ], 
+  "source_files": [
+    "cJSON.c"
+  ], 
+  "target_file": "libcm-1481860f524dd9bc", 
+  "build_scripts_names": {
+    "static": {
+      "cross_build_static_lib_c": "Cross static library", 
+      "build_static_lib_c": "Static library"
+    }, 
+    "dynamic": {
+      "build_dynamic_lib_c": "Dynamic library"
+    }
+  }
+}
