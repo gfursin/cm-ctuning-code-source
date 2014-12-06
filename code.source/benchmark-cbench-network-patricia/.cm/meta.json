@@ -29,7 +29,10 @@
       }
     }
   }, 
-  "main_language": "c", 
+  "add_target_extension": {
+    "dynamic": "exe", 
+    "static": "exe"
+  }, 
   "clean_scripts_names": {
     "clean": "Universal cleaning"
   }, 
@@ -53,23 +56,20 @@
   ], 
   "cm_file_upload_name": "", 
   "build_scripts_names": {
-    "static": {
-      "build_static_bin_c_through_link": "Build static binary from C sources through object files and linking", 
-      "build_static_bin_c_through_asm": "Build static binary from C sources through assembler", 
-      "build_static_bin_c_through_bc": "Build static binary from C sources through LLVM BC", 
-      "build_static_bin_c": "Build static binary directly"
-    }, 
     "dynamic": {
       "build_dynamic_bin_c_through_asm": "Build dynamic binary from C sources through assembler", 
       "build_dynamic_bin_c_through_bc": "Build dynamic binary from C sources through LLVM BC", 
       "build_dynamic_bin_c": "Build dynamic binary directly", 
       "build_dynamic_bin_c_through_link": "Build dynamic binary from C sources through object files and linking"
+    }, 
+    "static": {
+      "build_static_bin_c_through_link": "Build static binary from C sources through object files and linking", 
+      "build_static_bin_c_through_asm": "Build static binary from C sources through assembler", 
+      "build_static_bin_c_through_bc": "Build static binary from C sources through LLVM BC", 
+      "build_static_bin_c": "Build static binary directly"
     }
   }, 
-  "add_target_extension": {
-    "static": "exe", 
-    "dynamic": "exe"
-  }, 
+  "main_language": "c", 
   "build_scripts_uoa": [
     "9738ca3d2555f6eb"
   ], 
@@ -88,13 +88,13 @@
       "skip_form_refresh": "yes", 
       "explore_stop": "1000000", 
       "forbid_disable_at_random": "yes", 
-      "sort_index": "1", 
-      "explorable": "yes", 
-      "explore_level": "1", 
       "desc_text": "Main function/kernel repetition", 
+      "sort_index": "1", 
+      "property": "yes", 
+      "explorable": "yes", 
       "explore_start": "0", 
       "explore_step": "10", 
-      "property": "yes", 
+      "explore_level": "1", 
       "type": "integer"
     }
   }, 
@@ -110,9 +110,9 @@
   "cm_updated": [
     {
       "cm_iso_datetime": "2012-09-23T18:18:40.467000", 
+      "cm_person_uoa": "0728a400aa1c86fe", 
       "cm_user_uoa": "0728a400aa1c86fe", 
-      "cm_module_uid": "45741e3fbcf4024b", 
-      "cm_person_uoa": "0728a400aa1c86fe"
+      "cm_module_uid": "45741e3fbcf4024b"
     }
   ]
 }

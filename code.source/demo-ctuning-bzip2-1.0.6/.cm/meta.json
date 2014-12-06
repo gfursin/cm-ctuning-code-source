@@ -1,7 +1,7 @@
 {
   "add_target_extension": {
-    "static": "exe", 
-    "dynamic": "exe"
+    "dynamic": "exe", 
+    "static": "exe"
   }, 
   "build_scripts_uoa": [
     "9738ca3d2555f6eb"
@@ -90,9 +90,9 @@
   "cm_updated": [
     {
       "cm_iso_datetime": "2013-01-21T11:53:04.592000", 
+      "cm_person_uoa": "0728a400aa1c86fe", 
       "cm_user_uoa": "0728a400aa1c86fe", 
-      "cm_module_uid": "45741e3fbcf4024b", 
-      "cm_person_uoa": "0728a400aa1c86fe"
+      "cm_module_uid": "45741e3fbcf4024b"
     }
   ], 
   "source_files": [
@@ -112,10 +112,10 @@
   ], 
   "target_file": "a", 
   "build_scripts_names": {
-    "static": {
+    "dynamic": {
       "build_makefile": "Build using Makefile"
     }, 
-    "dynamic": {
+    "static": {
       "build_makefile": "Build using Makefile"
     }
   }

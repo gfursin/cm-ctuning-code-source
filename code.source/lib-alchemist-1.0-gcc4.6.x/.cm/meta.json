@@ -1,7 +1,7 @@
 {
   "add_target_extension": {
-    "static": "dll", 
-    "dynamic": "dll"
+    "dynamic": "dll", 
+    "static": "dll"
   }, 
   "cm_dependencies": {
     "target_processor": [], 
@@ -58,10 +58,10 @@
   ], 
   "target_file": "libcm-704caff3439c9dc2", 
   "build_scripts_names": {
-    "static": {
+    "dynamic": {
       "build_gcc_plugin_c": "Dynamic plugin"
     }, 
-    "dynamic": {
+    "static": {
       "build_gcc_plugin_c": "Dynamic plugin"
     }
   }

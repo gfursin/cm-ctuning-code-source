@@ -1,7 +1,7 @@
 {
   "add_target_extension": {
-    "static": "lib", 
-    "dynamic": "dll"
+    "dynamic": "dll", 
+    "static": "lib"
   }, 
   "cm_dependencies": {
     "target_processor": [], 
@@ -47,12 +47,12 @@
   ], 
   "target_file": "libcm-ce4e448e64ca58b5", 
   "build_scripts_names": {
+    "dynamic": {
+      "build_dynamic_lib_c": "Dynamic library"
+    }, 
     "static": {
       "cross_build_static_lib_c": "Cross static library", 
       "build_static_lib_c": "Static library"
-    }, 
-    "dynamic": {
-      "build_dynamic_lib_c": "Dynamic library"
     }
   }
 }

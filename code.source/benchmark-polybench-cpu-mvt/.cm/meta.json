@@ -1,8 +1,14 @@
 {
   "add_target_extension": {
-    "static": "exe", 
-    "dynamic": "exe"
+    "dynamic": "exe", 
+    "static": "exe"
   }, 
+  "cm_classes_uoa": [
+    "28ecc0c2a0215b5b", 
+    "607592f8cd400583", 
+    "dc6b904ae894e1cb", 
+    "4c92c9db21a28cca"
+  ], 
   "build_scripts_uoa": [
     "9738ca3d2555f6eb"
   ], 
@@ -28,25 +34,11 @@
       }
     }
   }, 
-  "target_file": "a", 
   "main_language": "c", 
   "clean_scripts_names": {
     "clean": "Universal cleaning"
   }, 
-  "cm_classes_uoa": [
-    "28ecc0c2a0215b5b", 
-    "607592f8cd400583", 
-    "dc6b904ae894e1cb", 
-    "4c92c9db21a28cca"
-  ], 
-  "cm_build_dependencies": [
-    "15404f97e7515f02"
-  ], 
-  "cm_access_control": {
-    "read_groups": "all", 
-    "comments_groups": "admin", 
-    "write_groups": "owner"
-  }, 
+  "target_file": "a", 
   "run_vars_desc": {
     "##CT_REPEAT_MAIN": {
       "default_value": "1", 
@@ -54,26 +46,28 @@
       "skip_form_refresh": "yes", 
       "explore_stop": "1000000", 
       "forbid_disable_at_random": "yes", 
-      "sort_index": "1", 
-      "explorable": "yes", 
-      "explore_level": "1", 
       "desc_text": "Main function/kernel repetition", 
+      "sort_index": "1", 
+      "property": "yes", 
+      "explorable": "yes", 
       "explore_start": "0", 
       "explore_step": "10", 
-      "property": "yes", 
+      "explore_level": "1", 
       "type": "integer"
     }
+  }, 
+  "cm_access_control": {
+    "read_groups": "all", 
+    "comments_groups": "admin", 
+    "write_groups": "owner"
   }, 
   "run_vars": {
     "CT_REPEAT_MAIN": "1"
   }, 
   "cm_description": "benchmarks from polybench updated by Grigori Fursin for collective and auto-tuning using cM", 
-  "build_compiler_vars": {
-    "POLYBENCH_PADDING_FACTOR": "0", 
-    "POLYBENCH_DUMP_ARRAYS": "YES", 
-    "DATA_TYPE": "double", 
-    "N": "16"
-  }, 
+  "cm_build_dependencies": [
+    "15404f97e7515f02"
+  ], 
   "cm_display_as_alias": "polybench - cpu - mvt", 
   "powered_by": {
     "version": "1.0.1977.beta", 
@@ -87,14 +81,34 @@
     }, 
     {
       "cm_iso_datetime": "2013-03-13T15:46:01.359000", 
+      "cm_person_uoa": "0728a400aa1c86fe", 
       "cm_user_uoa": "0728a400aa1c86fe", 
-      "cm_module_uid": "45741e3fbcf4024b", 
-      "cm_person_uoa": "0728a400aa1c86fe"
+      "cm_module_uid": "45741e3fbcf4024b"
     }
   ], 
   "source_files": [
     "mvt.c"
   ], 
+  "build_compiler_vars": {
+    "POLYBENCH_PADDING_FACTOR": "0", 
+    "N": "16", 
+    "DATA_TYPE": "double", 
+    "POLYBENCH_DUMP_ARRAYS": "YES"
+  }, 
+  "build_scripts_names": {
+    "dynamic": {
+      "build_dynamic_bin_c_through_asm": "Build dynamic binary from C sources through assembler", 
+      "build_dynamic_bin_c_through_bc": "Build dynamic binary from C sources through LLVM BC", 
+      "build_dynamic_bin_c": "Build dynamic binary directly", 
+      "build_dynamic_bin_c_through_link": "Build dynamic binary from C sources through object files and linking"
+    }, 
+    "static": {
+      "build_static_bin_c_through_link": "Build static binary from C sources through object files and linking", 
+      "build_static_bin_c_through_asm": "Build static binary from C sources through assembler", 
+      "build_static_bin_c_through_bc": "Build static binary from C sources through LLVM BC", 
+      "build_static_bin_c": "Build static binary directly"
+    }
+  }, 
   "source_files_templates": [
     "mvt.c"
   ], 
@@ -104,31 +118,31 @@
       "skip_form_refresh": "yes", 
       "explore_stop": "128", 
       "forbid_disable_at_random": "yes", 
-      "sort_index": "20", 
-      "explorable": "yes", 
-      "explore_level": "1", 
       "desc_text": "Transformation: Padding factor", 
+      "sort_index": "20", 
+      "property": "yes", 
+      "explorable": "yes", 
       "explore_start": "0", 
       "explore_step": "1", 
-      "property": "yes", 
+      "explore_level": "1", 
       "type": "integer"
     }, 
     "##DATA_TYPE": {
       "field_size": "7", 
-      "property": "yes", 
-      "forbid_disable_at_random": "yes", 
-      "sort_index": "25", 
-      "explorable": "yes", 
-      "explore_level": "1", 
-      "desc_text": "Program property: Variable precision", 
       "skip_form_refresh": "yes", 
-      "has_choice": "yes", 
+      "forbid_disable_at_random": "yes", 
       "choice": [
         "double", 
         "float", 
         "long", 
         "int"
       ], 
+      "sort_index": "25", 
+      "desc_text": "Program property: Variable precision", 
+      "explore_level": "1", 
+      "explorable": "yes", 
+      "has_choice": "yes", 
+      "property": "yes", 
       "type": "text"
     }, 
     "##N": {
@@ -137,13 +151,13 @@
       "explore_stop": "5000", 
       "forbid_disable_at_random": "yes", 
       "dataset_size": "yes", 
-      "sort_index": "1", 
-      "explorable": "yes", 
-      "explore_level": "1", 
       "desc_text": "Dataset: Matrix size N", 
+      "sort_index": "1", 
+      "property": "yes", 
+      "explorable": "yes", 
       "explore_start": "2", 
       "explore_step": "1", 
-      "property": "yes", 
+      "explore_level": "1", 
       "type": "integer"
     }, 
     "##POLYBENCH_DUMP_ARRAYS": {
@@ -157,20 +171,6 @@
       "has_choice": "yes", 
       "property": "yes", 
       "type": "text"
-    }
-  }, 
-  "build_scripts_names": {
-    "static": {
-      "build_static_bin_c_through_link": "Build static binary from C sources through object files and linking", 
-      "build_static_bin_c_through_asm": "Build static binary from C sources through assembler", 
-      "build_static_bin_c_through_bc": "Build static binary from C sources through LLVM BC", 
-      "build_static_bin_c": "Build static binary directly"
-    }, 
-    "dynamic": {
-      "build_dynamic_bin_c_through_asm": "Build dynamic binary from C sources through assembler", 
-      "build_dynamic_bin_c_through_bc": "Build dynamic binary from C sources through LLVM BC", 
-      "build_dynamic_bin_c": "Build dynamic binary directly", 
-      "build_dynamic_bin_c_through_link": "Build dynamic binary from C sources through object files and linking"
     }
   }
 }

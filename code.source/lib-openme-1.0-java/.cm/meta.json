@@ -1,7 +1,7 @@
 {
   "add_target_extension": {
-    "static": "java_lib", 
-    "dynamic": "java_lib"
+    "dynamic": "java_lib", 
+    "static": "java_lib"
   }, 
   "cm_dependencies": {
     "target_processor": [], 
@@ -49,10 +49,10 @@
   "target_file": "openme", 
   "cm_note": "When compiling for Android, use JDK 1.6 or lower - JDK 1.7 is currently not working properly.", 
   "build_scripts_names": {
-    "static": {
+    "dynamic": {
       "build_java_lib": "Java library (jar)"
     }, 
-    "dynamic": {
+    "static": {
       "build_java_lib": "Java library (jar)"
     }
   }
