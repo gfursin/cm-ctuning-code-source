@@ -3,90 +3,89 @@
     "dynamic": "exe", 
     "static": "exe"
   }, 
-  "cm_classes_uoa": [
-    "28ecc0c2a0215b5b", 
-    "607592f8cd400583"
-  ], 
-  "build_scripts_uoa": [
-    "9738ca3d2555f6eb"
-  ], 
-  "run_cmds": {
-    "default": {
-      "dataset_classes_uoa": [
-        "183d8d1e484b95fa"
-      ], 
-      "hot_functions": [
-        {
-          "percent": "99", 
-          "name": "kernel_2mm"
-        }
-      ], 
-      "run_time": {
-        "run_cmd_out1": "tmp-output1.tmp", 
-        "run_cmd_main": "", 
-        "run_cmd_out2": "tmp-output2.tmp", 
-        "run_output_files": [], 
-        "run_correctness_output_files": [
-          "tmp-output2.tmp"
-        ]
-      }
-    }
-  }, 
-  "main_language": "c", 
-  "clean_scripts_names": {
-    "clean": "Universal cleaning"
-  }, 
-  "target_file": "a", 
-  "run_vars_desc": {
-    "##CT_REPEAT_MAIN": {
-      "default_value": "1", 
-      "field_size": "7", 
-      "skip_form_refresh": "yes", 
-      "explore_stop": "1000000", 
-      "forbid_disable_at_random": "yes", 
-      "desc_text": "Main function/kernel repetition", 
-      "sort_index": "1", 
-      "property": "yes", 
-      "explorable": "yes", 
-      "explore_start": "0", 
-      "explore_step": "10", 
-      "explore_level": "1", 
-      "type": "integer"
-    }
-  }, 
-  "cm_access_control": {
-    "read_groups": "all", 
-    "comments_groups": "admin", 
-    "write_groups": "owner"
-  }, 
-  "run_vars": {
-    "CT_REPEAT_MAIN": "1"
-  }, 
-  "cm_description": "benchmarks from polybench updated by Grigori Fursin for collective and auto-tuning using cM", 
-  "cm_build_dependencies": [
-    "15404f97e7515f02"
-  ], 
-  "cm_display_as_alias": "polybench - cuda - 2dconv", 
-  "powered_by": {
-    "version": "1.0.1977.beta", 
-    "name": "Collective Mind Engine"
-  }, 
-  "cm_updated": [
-    {
-      "cm_iso_datetime": "2012-07-08T19:07:39.046000", 
-      "cm_module_uid": "45741e3fbcf4024b", 
-      "cm_user_uoa": "74c2480dcec9e85d"
-    }
-  ], 
-  "source_files": [
-    "2DConvolution.cu"
-  ], 
   "build_compiler_vars": {
-    "NI": "512", 
-    "NJ": "512", 
+    "DATA_TYPE": "float", 
     "DIM_THREAD_BLOCK_X": "8", 
     "DIM_THREAD_BLOCK_Y": "8", 
-    "DATA_TYPE": "float"
+    "NI": "512", 
+    "NJ": "512"
+  }, 
+  "build_compiler_vars_desc": {
+    "##DATA_TYPE": {
+      "choice": [
+        "double", 
+        "float"
+      ], 
+      "default_value": "float", 
+      "desc_text": "Program property: Variable precision", 
+      "explorable": "yes", 
+      "explore_level": "1", 
+      "field_size": "7", 
+      "forbid_disable_at_random": "yes", 
+      "has_choice": "yes", 
+      "property": "yes", 
+      "skip_form_refresh": "yes", 
+      "sort_index": "25", 
+      "type": "text"
+    }, 
+    "##DIM_THREAD_BLOCK_X": {
+      "desc_text": "Thread: block X", 
+      "explorable": "yes", 
+      "explore_level": "1", 
+      "explore_start": "1", 
+      "explore_step": "1", 
+      "explore_stop": "64", 
+      "field_size": "7", 
+      "forbid_disable_at_random": "yes", 
+      "property": "yes", 
+      "skip_form_refresh": "yes", 
+      "sort_index": "3", 
+      "type": "integer"
+    }, 
+    "##DIM_THREAD_BLOCK_Y": {
+      "desc_text": "Thread: block Y", 
+      "explorable": "yes", 
+      "explore_level": "1", 
+      "explore_start": "1", 
+      "explore_step": "1", 
+      "explore_stop": "64", 
+      "field_size": "7", 
+      "forbid_disable_at_random": "yes", 
+      "property": "yes", 
+      "skip_form_refresh": "yes", 
+      "sort_index": "4", 
+      "type": "integer"
+    }, 
+    "##NI": {
+      "dataset_size": "yes", 
+      "desc_text": "Dataset: Matrix size NI", 
+      "explorable": "yes", 
+      "explore_level": "1", 
+      "explore_start": "2", 
+      "explore_step": "1", 
+      "explore_stop": "8192", 
+      "field_size": "7", 
+      "forbid_disable_at_random": "yes", 
+      "property": "yes", 
+      "skip_form_refresh": "yes", 
+      "sort_index": "1", 
+      "type": "integer"
+    }, 
+    "##NJ": {
+      "dataset_size": "yes", 
+      "desc_text": "Dataset: Matrix size NJ", 
+      "explorable": "yes", 
+      "explore_level": "1", 
+      "explore_start": "2", 
+      "explore_step": "1", 
+      "explore_stop": "8192", 
+      "field_size": "7", 
+      "forbid_disable_at_random": "yes", 
+      "property": "yes", 
+      "skip_form_refresh": "yes", 
+      "sort_index": "2", 
+      "type": "integer"
+    }
   }, 
   "build_scripts_names": {
     "dynamic": {
@@ -96,84 +95,85 @@
       "build_hetero_bin_c": "Build heterogeneous binary directly"
     }
   }, 
+  "build_scripts_uoa": [
+    "9738ca3d2555f6eb"
+  ], 
+  "clean_scripts_names": {
+    "clean": "Universal cleaning"
+  }, 
+  "cm_access_control": {
+    "comments_groups": "admin", 
+    "read_groups": "all", 
+    "write_groups": "owner"
+  }, 
+  "cm_build_dependencies": [
+    "15404f97e7515f02"
+  ], 
+  "cm_classes_uoa": [
+    "28ecc0c2a0215b5b", 
+    "607592f8cd400583"
+  ], 
+  "cm_description": "benchmarks from polybench updated by Grigori Fursin for collective and auto-tuning using cM", 
+  "cm_display_as_alias": "polybench - cuda - 2dconv", 
+  "cm_updated": [
+    {
+      "cm_iso_datetime": "2012-07-08T19:07:39.046000", 
+      "cm_module_uid": "45741e3fbcf4024b", 
+      "cm_user_uoa": "74c2480dcec9e85d"
+    }
+  ], 
+  "main_language": "c", 
+  "powered_by": {
+    "name": "Collective Mind Engine", 
+    "version": "1.0.1977.beta"
+  }, 
+  "run_cmds": {
+    "default": {
+      "dataset_classes_uoa": [
+        "183d8d1e484b95fa"
+      ], 
+      "hot_functions": [
+        {
+          "name": "kernel_2mm", 
+          "percent": "99"
+        }
+      ], 
+      "run_time": {
+        "run_cmd_main": "", 
+        "run_cmd_out1": "tmp-output1.tmp", 
+        "run_cmd_out2": "tmp-output2.tmp", 
+        "run_correctness_output_files": [
+          "tmp-output2.tmp"
+        ], 
+        "run_output_files": []
+      }
+    }
+  }, 
+  "run_vars": {
+    "CT_REPEAT_MAIN": "1"
+  }, 
+  "run_vars_desc": {
+    "##CT_REPEAT_MAIN": {
+      "default_value": "1", 
+      "desc_text": "Main function/kernel repetition", 
+      "explorable": "yes", 
+      "explore_level": "1", 
+      "explore_start": "0", 
+      "explore_step": "10", 
+      "explore_stop": "1000000", 
+      "field_size": "7", 
+      "forbid_disable_at_random": "yes", 
+      "property": "yes", 
+      "skip_form_refresh": "yes", 
+      "sort_index": "1", 
+      "type": "integer"
+    }
+  }, 
+  "source_files": [
+    "2DConvolution.cu"
+  ], 
   "source_files_templates": [
     "2DConvolution.cu"
   ], 
-  "build_compiler_vars_desc": {
-    "##DATA_TYPE": {
-      "default_value": "float", 
-      "field_size": "7", 
-      "skip_form_refresh": "yes", 
-      "forbid_disable_at_random": "yes", 
-      "explore_level": "1", 
-      "choice": [
-        "double", 
-        "float"
-      ], 
-      "desc_text": "Program property: Variable precision", 
-      "sort_index": "25", 
-      "explorable": "yes", 
-      "has_choice": "yes", 
-      "property": "yes", 
-      "type": "text"
-    }, 
-    "##DIM_THREAD_BLOCK_X": {
-      "field_size": "7", 
-      "skip_form_refresh": "yes", 
-      "explore_stop": "64", 
-      "forbid_disable_at_random": "yes", 
-      "desc_text": "Thread: block X", 
-      "sort_index": "3", 
-      "property": "yes", 
-      "explorable": "yes", 
-      "explore_start": "1", 
-      "explore_step": "1", 
-      "explore_level": "1", 
-      "type": "integer"
-    }, 
-    "##DIM_THREAD_BLOCK_Y": {
-      "field_size": "7", 
-      "skip_form_refresh": "yes", 
-      "explore_stop": "64", 
-      "forbid_disable_at_random": "yes", 
-      "desc_text": "Thread: block Y", 
-      "sort_index": "4", 
-      "property": "yes", 
-      "explorable": "yes", 
-      "explore_start": "1", 
-      "explore_step": "1", 
-      "explore_level": "1", 
-      "type": "integer"
-    }, 
-    "##NJ": {
-      "field_size": "7", 
-      "skip_form_refresh": "yes", 
-      "explore_stop": "8192", 
-      "forbid_disable_at_random": "yes", 
-      "dataset_size": "yes", 
-      "desc_text": "Dataset: Matrix size NJ", 
-      "sort_index": "2", 
-      "property": "yes", 
-      "explorable": "yes", 
-      "explore_start": "2", 
-      "explore_step": "1", 
-      "explore_level": "1", 
-      "type": "integer"
-    }, 
-    "##NI": {
-      "field_size": "7", 
-      "skip_form_refresh": "yes", 
-      "explore_stop": "8192", 
-      "forbid_disable_at_random": "yes", 
-      "dataset_size": "yes", 
-      "desc_text": "Dataset: Matrix size NI", 
-      "sort_index": "1", 
-      "property": "yes", 
-      "explorable": "yes", 
-      "explore_start": "2", 
-      "explore_step": "1", 
-      "explore_level": "1", 
-      "type": "integer"
-    }
-  }
+  "target_file": "a"
 }
