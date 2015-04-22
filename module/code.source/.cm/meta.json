@@ -1,360 +1,360 @@
 {
   "authors": [
     "0728a400aa1c86fe"
-  ], 
-  "calming_delay": "1", 
+  ],
+  "calming_delay": "1",
   "cm_actions": [
     {
-      "cm_index": "change_work_dir", 
-      "desc": "changing working directory to a given source code entry", 
-      "func": "change_work_dir", 
-      "params": "", 
+      "cm_index": "change_work_dir",
+      "desc": "changing working directory to a given source code entry",
+      "func": "change_work_dir",
+      "params": "",
       "params_default": ""
-    }, 
+    },
     {
-      "cm_index": "build", 
-      "desc": "build program", 
-      "func": "build", 
-      "params": "", 
+      "cm_index": "build",
+      "desc": "build program",
+      "func": "build",
+      "params": "",
       "params_default": ""
-    }, 
+    },
     {
-      "cm_index": "web_build", 
-      "desc": "build program through web", 
-      "func": "web_build", 
-      "params": "", 
-      "params_default": "", 
+      "cm_index": "web_build",
+      "desc": "build program through web",
+      "func": "web_build",
+      "params": "",
+      "params_default": "",
       "params_desc": {
         "##build_run_script": {
           "data_from_other_data": {
-            "cm_key": "##work_dir_data_uoa", 
-            "cm_module_uoa": "45741e3fbcf4024b", 
-            "cm_sub_key": "##build_scripts_names", 
+            "cm_key": "##work_dir_data_uoa",
+            "cm_module_uoa": "45741e3fbcf4024b",
+            "cm_sub_key": "##build_scripts_names",
             "cm_sub_key_from_data": "##compilation_type"
-          }, 
-          "desc_text": "Build script name", 
-          "has_choice": "yes", 
-          "sort_index": "60", 
+          },
+          "desc_text": "Build script name",
+          "has_choice": "yes",
+          "sort_index": "60",
           "type": "text"
-        }, 
+        },
         "##build_run_script_uoa": {
-          "cm_module_uoa": "d91afa2830ddcbac", 
+          "cm_module_uoa": "d91afa2830ddcbac",
           "data_from_other_data": {
-            "cm_key": "##work_dir_data_uoa", 
-            "cm_module_uoa": "45741e3fbcf4024b", 
+            "cm_key": "##work_dir_data_uoa",
+            "cm_module_uoa": "45741e3fbcf4024b",
             "cm_sub_key": "##build_scripts_uoa"
-          }, 
-          "desc_text": "Build script type", 
-          "force_select_first": "yes", 
-          "sort_index": "50", 
+          },
+          "desc_text": "Build script type",
+          "force_select_first": "yes",
+          "sort_index": "50",
           "type": "uoa"
-        }, 
+        },
         "##build_target_os_uoa": {
-          "cm_module_uoa": "b9735a270ba455c3", 
+          "cm_module_uoa": "b9735a270ba455c3",
           "data_from_other_data": {
-            "cm_key": "##ctuning_setup_uoa", 
-            "cm_module_uoa": "b8a7418f9c701002", 
+            "cm_key": "##ctuning_setup_uoa",
+            "cm_module_uoa": "b8a7418f9c701002",
             "cm_sub_key": "##cm_choices#cm_target_os_uoa"
-          }, 
-          "desc_text": "Target OS", 
-          "force_select_first": "yes", 
-          "sort_index": "30", 
+          },
+          "desc_text": "Target OS",
+          "force_select_first": "yes",
+          "sort_index": "30",
           "type": "uoa"
-        }, 
+        },
         "##clean_program": {
           "choice": [
-            "yes", 
+            "yes",
             "no"
-          ], 
-          "default_value": "yes", 
-          "desc_text": "Clean program", 
-          "has_choice": "yes", 
-          "sort_index": "72", 
+          ],
+          "default_value": "yes",
+          "desc_text": "Clean program",
+          "has_choice": "yes",
+          "sort_index": "72",
           "type": "text"
-        }, 
+        },
         "##clean_program_script_name": {
           "data_from_other_data": {
-            "cm_key": "##work_dir_data_uoa", 
-            "cm_module_uoa": "45741e3fbcf4024b", 
+            "cm_key": "##work_dir_data_uoa",
+            "cm_module_uoa": "45741e3fbcf4024b",
             "cm_sub_key": "##clean_scripts_names"
-          }, 
-          "desc_text": "Cleaning script name", 
-          "has_choice": "yes", 
-          "sort_index": "74", 
+          },
+          "desc_text": "Cleaning script name",
+          "has_choice": "yes",
+          "sort_index": "74",
           "type": "text"
-        }, 
+        },
         "##cm_dependencies": {
           "data_from_other_data": {
-            "cm_key": "##work_dir_data_uoa", 
-            "cm_module_uoa": "45741e3fbcf4024b", 
-            "cm_sub_key": "##cm_build_dependencies", 
+            "cm_key": "##work_dir_data_uoa",
+            "cm_module_uoa": "45741e3fbcf4024b",
+            "cm_sub_key": "##cm_build_dependencies",
             "type": "add_to_list"
-          }, 
-          "desc_text": "Dependencies on other code", 
-          "skip_next_desc": "yes", 
-          "sort_index": "65", 
-          "type": "list", 
+          },
+          "desc_text": "Dependencies on other code",
+          "skip_next_desc": "yes",
+          "sort_index": "65",
+          "type": "list",
           "type_next": "dict"
-        }, 
+        },
         "##cm_dependencies@$": {
-          "dict_type": "free", 
-          "key_from_module_uoa": "58014c9c91d6d101", 
-          "skip_next_desc": "yes", 
-          "type": "dict", 
+          "dict_type": "free",
+          "key_from_module_uoa": "58014c9c91d6d101",
+          "skip_next_desc": "yes",
+          "type": "dict",
           "type_next": "value"
-        }, 
+        },
         "##cm_dependencies@$#$": {
-          "cm_classes_uoa_from_key": "yes", 
-          "cm_module_uoa": "688dee2e7014f1fb", 
+          "cm_classes_uoa_from_key": "yes",
+          "cm_module_uoa": "688dee2e7014f1fb",
           "cm_real_dependencies_real_from_data": {
-            "##build_target_os_uoa": "target_os", 
-            "##compilation_type_of_linked_libraries": "compilation_type", 
-            "##compiler_code_uoa": "compiler_code_uoa", 
-            "##run_host_os_uoa": "host_os", 
+            "##build_target_os_uoa": "target_os",
+            "##compilation_type_of_linked_libraries": "compilation_type",
+            "##compiler_code_uoa": "compiler_code_uoa",
+            "##run_host_os_uoa": "host_os",
             "##run_target_processor_uoa": "target_processor"
-          }, 
-          "force_select_first": "yes", 
+          },
+          "force_select_first": "yes",
           "type": "uoa"
-        }, 
+        },
         "##cm_show_json": {
           "choice": [
-            "yes", 
+            "yes",
             "no"
-          ], 
-          "default_value": "no", 
-          "desc_text": "Show json", 
-          "has_choice": "yes", 
-          "skip_form_refresh": "yes", 
-          "sort_index": "300", 
-          "space_before": "yes", 
-          "title_before": "Debug/Developer mode", 
+          ],
+          "default_value": "no",
+          "desc_text": "Show json",
+          "has_choice": "yes",
+          "skip_form_refresh": "yes",
+          "sort_index": "300",
+          "space_before": "yes",
+          "title_before": "Debug/Developer mode",
           "type": "text"
-        }, 
+        },
         "##compilation_type": {
           "choice": [
-            "static", 
+            "static",
             "dynamic"
-          ], 
-          "default_value": "static", 
-          "desc_text": "Compilation type", 
-          "has_choice": "yes", 
-          "sort_index": "52", 
+          ],
+          "default_value": "static",
+          "desc_text": "Compilation type",
+          "has_choice": "yes",
+          "sort_index": "52",
           "type": "text"
-        }, 
+        },
         "##compilation_type_of_linked_libraries": {
           "choice": [
-            "static", 
+            "static",
             "dynamic"
-          ], 
-          "default_value": "static", 
-          "desc_text": "Compilation type of linked libraries", 
-          "disable": "yes", 
-          "has_choice": "yes", 
-          "sort_index": "53", 
+          ],
+          "default_value": "static",
+          "desc_text": "Compilation type of linked libraries",
+          "disable": "yes",
+          "has_choice": "yes",
+          "sort_index": "53",
           "type": "text"
-        }, 
+        },
         "##compiler_code_uoa": {
           "cm_class_dependencies_from_data": {
             "##build_target_os_uoa": {
-              "cm_key": "target_os", 
+              "cm_key": "target_os",
               "cm_module_uoa": "b9735a270ba455c3"
-            }, 
+            },
             "##run_host_os_uoa": {
-              "cm_key": "host_os", 
+              "cm_key": "host_os",
               "cm_module_uoa": "b9735a270ba455c3"
-            }, 
+            },
             "##run_target_processor_uoa": {
-              "cm_key": "target_processor", 
+              "cm_key": "target_processor",
               "cm_module_uoa": "41a0bd4f09be3d16"
             }
-          }, 
+          },
           "cm_classes_uoa": [
             "72f81bd39f84ed89"
-          ], 
-          "cm_module_uoa": "688dee2e7014f1fb", 
-          "desc_text": "Compiler", 
-          "force_select_first": "yes", 
-          "sort_index": "40", 
-          "space_before": "yes", 
-          "title_before": "Build parameters", 
+          ],
+          "cm_module_uoa": "688dee2e7014f1fb",
+          "desc_text": "Compiler",
+          "force_select_first": "yes",
+          "sort_index": "40",
+          "space_before": "yes",
+          "title_before": "Build parameters",
           "type": "uoa"
-        }, 
+        },
         "##compiler_flags": {
-          "desc_text": "Compiler flags", 
-          "sort_index": "70", 
+          "desc_text": "Compiler flags",
+          "sort_index": "70",
           "type": "text"
-        }, 
+        },
         "##compiler_flags_node": {
-          "desc_text": "Compiler flags node", 
-          "sort_index": "42", 
+          "desc_text": "Compiler flags node",
+          "sort_index": "42",
           "type": "dict"
-        }, 
+        },
         "##compiler_flags_node#all_compiler_flags": {
-          "desc_text": "-", 
+          "desc_text": "-",
           "expand_from_other_data": {
-            "cm_key": "##ctuning_compiler_uoa", 
-            "cm_module_uoa": "cff49b38f4c2395d", 
-            "cm_sub_key": "##all_compiler_flags", 
+            "cm_key": "##ctuning_compiler_uoa",
+            "cm_module_uoa": "cff49b38f4c2395d",
+            "cm_sub_key": "##all_compiler_flags",
             "cm_sub_key_desc": "##all_compiler_flags_desc"
-          }, 
-          "type": "dict", 
+          },
+          "type": "dict",
           "type_next": "dict"
-        }, 
+        },
         "##ctuning_compiler_uoa": {
-          "cm_module_uoa": "cff49b38f4c2395d", 
+          "cm_module_uoa": "cff49b38f4c2395d",
           "data_from_other_data": {
-            "cm_key": "##compiler_code_uoa", 
-            "cm_module_uoa": "688dee2e7014f1fb", 
+            "cm_key": "##compiler_code_uoa",
+            "cm_module_uoa": "688dee2e7014f1fb",
             "cm_sub_key": "##ctuning_compiler_uoa"
-          }, 
-          "desc_text": "cTuning compiler description", 
-          "force_select_first": "yes", 
-          "sort_index": "41", 
+          },
+          "desc_text": "cTuning compiler description",
+          "force_select_first": "yes",
+          "sort_index": "41",
           "type": "uoa"
-        }, 
+        },
         "##ctuning_setup_uoa": {
-          "cm_module_uoa": "b8a7418f9c701002", 
-          "desc_text": "collective tuning setup", 
-          "sort_index": "5", 
+          "cm_module_uoa": "b8a7418f9c701002",
+          "desc_text": "collective tuning setup",
+          "sort_index": "5",
           "type": "uoa"
-        }, 
+        },
         "##dataset_uoa": {
-          "cm_module_uoa": "8a7141c59cd335f5", 
+          "cm_module_uoa": "8a7141c59cd335f5",
           "data_from_other_data": {
-            "cm_key": "##work_dir_data_uoa", 
-            "cm_module_uoa": "45741e3fbcf4024b", 
-            "cm_sub_key": "##run_cmds", 
-            "cm_sub_key_from_data": "##run_cmd_key", 
-            "cm_sub_key_from_data1": "dataset_classes_uoa", 
+            "cm_key": "##work_dir_data_uoa",
+            "cm_module_uoa": "45741e3fbcf4024b",
+            "cm_sub_key": "##run_cmds",
+            "cm_sub_key_from_data": "##run_cmd_key",
+            "cm_sub_key_from_data1": "dataset_classes_uoa",
             "type": "add_to_classes"
-          }, 
-          "desc_text": "Dataset UOA", 
-          "force_select_first": "yes", 
-          "sort_index": "77", 
+          },
+          "desc_text": "Dataset UOA",
+          "force_select_first": "yes",
+          "sort_index": "77",
           "type": "uoa"
-        }, 
+        },
         "##install": {
           "choice": [
-            "yes", 
+            "yes",
             "no"
-          ], 
-          "default_value": "no", 
-          "desc_text": "Install to code entry", 
-          "has_choice": "yes", 
-          "skip_form_refresh": "yes", 
-          "sort_index": "85", 
-          "space_before": "yes", 
-          "title_before": "Installation", 
+          ],
+          "default_value": "no",
+          "desc_text": "Install to code entry",
+          "has_choice": "yes",
+          "skip_form_refresh": "yes",
+          "sort_index": "85",
+          "space_before": "yes",
+          "title_before": "Installation",
           "type": "text"
-        }, 
+        },
         "##install_data_uid": {
-          "desc_text": "Force UID for installation data", 
-          "sort_index": "90", 
+          "desc_text": "Force UID for installation data",
+          "sort_index": "90",
           "type": "text"
-        }, 
+        },
         "##install_repo_uoa": {
-          "cm_module_uoa": "b59ada2b6842a6c8", 
-          "desc_text": "Installation repository", 
-          "skip_form_refresh": "yes", 
-          "sort_index": "90", 
+          "cm_module_uoa": "b59ada2b6842a6c8",
+          "desc_text": "Installation repository",
+          "skip_form_refresh": "yes",
+          "sort_index": "90",
           "type": "uoa"
-        }, 
+        },
         "##keep_all_files": {
           "choice": [
-            "yes", 
+            "yes",
             "no"
-          ], 
-          "default_value": "no", 
-          "desc_text": "Keep all produced files", 
-          "has_choice": "yes", 
-          "skip_form_refresh": "yes", 
-          "sort_index": "310", 
+          ],
+          "default_value": "no",
+          "desc_text": "Keep all produced files",
+          "has_choice": "yes",
+          "skip_form_refresh": "yes",
+          "sort_index": "310",
           "type": "text"
-        }, 
+        },
         "##repeat_kernel": {
-          "default_value": "1", 
-          "desc_text": "Number of times to repeat kernel", 
-          "sort_index": "79", 
+          "default_value": "1",
+          "desc_text": "Number of times to repeat kernel",
+          "sort_index": "79",
           "type": "integer"
-        }, 
+        },
         "##run_cmd1": {
-          "desc_text": "Extra command line", 
-          "sort_index": "81", 
+          "desc_text": "Extra command line",
+          "sort_index": "81",
           "type": "text"
-        }, 
+        },
         "##run_cmd_key": {
           "data_from_other_data": {
-            "cm_key": "##work_dir_data_uoa", 
-            "cm_module_uoa": "45741e3fbcf4024b", 
+            "cm_key": "##work_dir_data_uoa",
+            "cm_module_uoa": "45741e3fbcf4024b",
             "cm_sub_key": "##run_cmds"
-          }, 
-          "desc_text": "Command line", 
-          "has_choice": "yes", 
-          "sort_index": "75", 
-          "start_new_column": "yes", 
-          "title_before": "Run parameters", 
+          },
+          "desc_text": "Command line",
+          "has_choice": "yes",
+          "sort_index": "75",
+          "start_new_column": "yes",
+          "title_before": "Run parameters",
           "type": "text"
-        }, 
+        },
         "##run_host_os_uoa": {
-          "cm_module_uoa": "b9735a270ba455c3", 
+          "cm_module_uoa": "b9735a270ba455c3",
           "data_from_other_data": {
-            "cm_key": "##ctuning_setup_uoa", 
-            "cm_module_uoa": "b8a7418f9c701002", 
+            "cm_key": "##ctuning_setup_uoa",
+            "cm_module_uoa": "b8a7418f9c701002",
             "cm_sub_key": "##cm_choices#cm_host_os_uoa"
-          }, 
-          "desc_text": "Host OS", 
-          "force_select_first": "yes", 
-          "sort_index": "25", 
+          },
+          "desc_text": "Host OS",
+          "force_select_first": "yes",
+          "sort_index": "25",
           "type": "uoa"
-        }, 
+        },
         "##run_target_processor_uoa": {
-          "cm_module_uoa": "41a0bd4f09be3d16", 
+          "cm_module_uoa": "41a0bd4f09be3d16",
           "data_from_other_data": {
-            "cm_key": "##ctuning_setup_uoa", 
-            "cm_module_uoa": "b8a7418f9c701002", 
+            "cm_key": "##ctuning_setup_uoa",
+            "cm_module_uoa": "b8a7418f9c701002",
             "cm_sub_key": "##cm_choices#run_target_processor_uoa"
-          }, 
-          "desc_text": "Target processor", 
-          "force_select_first": "yes", 
-          "sort_index": "35", 
+          },
+          "desc_text": "Target processor",
+          "force_select_first": "yes",
+          "sort_index": "35",
           "type": "uoa"
-        }, 
+        },
         "##work_dir_data_uoa": {
-          "cm_module_uoa": "45741e3fbcf4024b", 
-          "cm_repo_uoa_active": "##work_dir_repo_uoa", 
-          "desc_text": "Program", 
-          "sort_index": "38", 
+          "cm_module_uoa": "45741e3fbcf4024b",
+          "cm_repo_uoa_active": "##work_dir_repo_uoa",
+          "desc_text": "Program",
+          "sort_index": "38",
           "type": "uoa"
-        }, 
+        },
         "##work_dir_repo_uoa": {
-          "cm_module_uoa": "b59ada2b6842a6c8", 
-          "default_value": "ctuning-experiments", 
-          "desc_text": "Working repository", 
-          "sort_index": "1", 
-          "title_before": "Common parameters", 
+          "cm_module_uoa": "b59ada2b6842a6c8",
+          "default_value": "ctuning-experiments",
+          "desc_text": "Working repository",
+          "sort_index": "1",
+          "title_before": "Common parameters",
           "type": "uoa"
         }
       }
     }
-  ], 
-  "cm_common_actions": [], 
-  "cm_data_description": {}, 
-  "cm_module_py_dir": "", 
-  "cm_module_py_ext": "module", 
+  ],
+  "cm_common_actions": [],
+  "cm_data_description": {},
+  "cm_module_py_dir": "",
+  "cm_module_py_ext": "module",
   "cm_modules": {
-    "class": "58014c9c91d6d101", 
-    "cm-core": "9ac54cef3d7caa8a", 
-    "cm-web": "f0d8604c7abf6aee", 
-    "code": "688dee2e7014f1fb", 
-    "ctuning.scenario": "aaa8e4766b0351e8", 
-    "ctuning.setup": "b8a7418f9c701002", 
-    "dataset": "8a7141c59cd335f5", 
-    "os": "b9735a270ba455c3", 
-    "os.script": "d91afa2830ddcbac", 
+    "class": "58014c9c91d6d101",
+    "cm-core": "9ac54cef3d7caa8a",
+    "cm-web": "f0d8604c7abf6aee",
+    "code": "688dee2e7014f1fb",
+    "ctuning.scenario": "aaa8e4766b0351e8",
+    "ctuning.setup": "b8a7418f9c701002",
+    "dataset": "8a7141c59cd335f5",
+    "os": "b9735a270ba455c3",
+    "os.script": "d91afa2830ddcbac",
     "processor": "41a0bd4f09be3d16"
-  }, 
-  "install_obj_dir": "obj", 
-  "license": "cM 1.x license", 
-  "minimal_setup_for_download": "yes", 
+  },
+  "install_obj_dir": "obj",
+  "license": "cM 1.x license",
+  "minimal_setup_for_download": "yes",
   "url_module": ""
 }
