@@ -1,11 +1,11 @@
 {
   "data_uid": "38f4c225ca77ce3b", 
-  "data_name": "cTuning outdated benchmarks (CM source code)", 
+  "data_name": "cTuning benchmarks (CM source code) - deprecated", 
   "dict": {
     "url": "https://github.com/gfursin/cm-ctuning-code-source.git", 
     "shared": "git", 
     "sync": "yes"
   }, 
-  "data_alias": "ctuning-benchmarks", 
-  "data_uoa": "ctuning-benchmarks"
+  "data_alias": "ctuning-benchmarks-from-cm-deprecated", 
+  "data_uoa": "ctuning-benchmarks-from-cm-deprecated"
 }
