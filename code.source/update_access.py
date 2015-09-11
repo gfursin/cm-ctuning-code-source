@@ -1,7 +1,7 @@
 # Collective Mind
 #
 # See cM LICENSE.txt for licensing details.
-# See cM Copyright.txt for copyright details.
+# See cM COPYRIGHT.txt for copyright details.
 #
 # Developer(s): Grigori Fursin, started on 2011.09
 
