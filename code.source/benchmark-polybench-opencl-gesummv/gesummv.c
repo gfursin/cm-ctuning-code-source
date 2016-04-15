@@ -37,8 +37,8 @@
 #define N 512 //4096
 
 /* Thread block dimensions */
-#define DIM_LOCAL_WORK_GROUP_X 256
-#define DIM_LOCAL_WORK_GROUP_Y 1
+#define LWS_X 256
+#define LWS_Y 1
 
 #if defined(cl_khr_fp64)  // Khronos extension available?
 #pragma OPENCL EXTENSION cl_khr_fp64 : enable
@@ -246,10 +246,10 @@ void cl_launch_kernel()
 	int n = N;
 
 	size_t localWorkSize[2], globalWorkSize[2];
-	localWorkSize[0] = DIM_LOCAL_WORK_GROUP_X;
-	localWorkSize[1] = DIM_LOCAL_WORK_GROUP_Y;
-	globalWorkSize[0] = (size_t)ceil(((float)N) / ((float)DIM_LOCAL_WORK_GROUP_X)) * DIM_LOCAL_WORK_GROUP_X;
-	globalWorkSize[1] = (size_t)ceil(((float)N) / ((float)DIM_LOCAL_WORK_GROUP_Y)) * DIM_LOCAL_WORK_GROUP_Y;
+	localWorkSize[0] = LWS_X;
+	localWorkSize[1] = LWS_Y;
+	globalWorkSize[0] = (size_t)ceil(((float)N) / ((float)LWS_X)) * LWS_X;
+	globalWorkSize[1] = (size_t)ceil(((float)N) / ((float)LWS_Y)) * LWS_Y;
 
 //	t_start = rtclock();
 	

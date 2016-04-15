@@ -38,8 +38,8 @@
 #define NJ 512 //4096
 
 /* Thread block dimensions */
-#define DIM_LOCAL_WORK_GROUP_X 8 //32
-#define DIM_LOCAL_WORK_GROUP_Y 8
+#define LWS_X 8 //32
+#define LWS_Y 8
 
 
 #if defined(cl_khr_fp64)  // Khronos extension available?
@@ -217,10 +217,10 @@ void cl_launch_kernel()
 	int nj = NJ;
 
 	size_t localWorkSize[2], globalWorkSize[2];
-	localWorkSize[0] = DIM_LOCAL_WORK_GROUP_X;
-	localWorkSize[1] = DIM_LOCAL_WORK_GROUP_Y;
-	globalWorkSize[0] = (size_t)ceil(((float)NI) / ((float)DIM_LOCAL_WORK_GROUP_X)) * DIM_LOCAL_WORK_GROUP_X;
-	globalWorkSize[1] = (size_t)ceil(((float)NJ) / ((float)DIM_LOCAL_WORK_GROUP_Y)) * DIM_LOCAL_WORK_GROUP_Y;
+	localWorkSize[0] = LWS_X;
+	localWorkSize[1] = LWS_Y;
+	globalWorkSize[0] = (size_t)ceil(((float)NI) / ((float)LWS_X)) * LWS_X;
+	globalWorkSize[1] = (size_t)ceil(((float)NJ) / ((float)LWS_Y)) * LWS_Y;
 
 //	t_start = rtclock();
 	
