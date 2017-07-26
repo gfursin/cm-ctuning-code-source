@@ -4,6 +4,7 @@
   "dict": {
     "url": "https://github.com/gfursin/cm-ctuning-code-source.git", 
     "shared": "git", 
+    "private": "yes",
     "sync": "yes"
   }, 
   "data_alias": "ctuning-benchmarks-from-cm-deprecated", 
